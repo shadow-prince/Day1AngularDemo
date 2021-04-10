@@ -1,11 +1,104 @@
-<h2>
-	Employee Component : &nbsp; {{name}}
-</h2>
-<div class="card" style="border: solid orange;">
-	<app-project></app-project>
-	<br>
-      <br>
+<div class="card" style="width: 18rem;">
+	<div class="card-body">
+		<h5 class="card-title">{{cardTitle}}</h5>
+		<p class="card-text">{{cardDisp}}</p>
+		<a (click)="onClick()" class={{btnStyle}}>Expand this</a>
+	</div>
 </div>
-<p>
-	End of Employee Component
-</p>
+<br>
+
+<div class="container">
+	<table>
+		<tr>
+			<td>
+				First Name
+			</td>
+			<td>
+				{{fName}}
+			</td>
+		</tr>
+		<tr>
+			<td>
+				Last Name
+			</td>
+			<td>
+				{{lName}}
+			</td>
+
+		</tr>
+		<tr *ngIf='showStatus'>
+			<td>
+				Gender
+			</td>
+			<td>
+				{{gender}}
+			</td>
+		</tr>
+		<tr *ngIf='showStatus'>
+			<td>
+				Age
+			</td>
+			<td>
+				{{age}}
+			</td>
+		</tr>
+	</table>
+	<button (click)="clickMe()" class="btn btn-primary">{{showStatus?'Hide':'Show'}}</button>
+
+</div>
+
+<br>
+
+<div class="container">
+	<input type="text" class="form-control" placeholder="Enter Name " [(ngModel)]='fName'>
+	Your Name {{fName}}
+</div>
+<br>
+<br>
+
+<div class="container">
+
+	<input type="text" class="form-control" placeholder="Enter Employee Id " [(ngModel)]='empid'>
+	<div *ngIf='flag'  class="alert alert-danger" role="alert">
+		Employee id {{empid}} already exits!
+	  </div>
+	<input type="text" class="form-control" placeholder="Enter  Name" [(ngModel)]='empName'>
+	<input type="text" class="form-control" placeholder="Enter Age " [(ngModel)]='empAge'>
+<button (click)="addEmployee()" class="btn btn-primary">Add Employee</button>
+</div>
+<div *ngIf='success'  class="alert alert-success" role="alert">
+	Employee Added
+</div>
+<div class="container">
+ 
+	<div class="table-responsive">
+		<table class="table table-hover">
+			<thead>
+				<tr>
+					<th>
+						Employee Id
+					</th>
+					<th>
+						Name
+					</th>
+					<th>
+						Age
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr *ngFor="let e of employees">
+					<td>
+						{{e.empid}}
+					</td>
+					<td>
+						{{e.name}}
+					</td>
+					<td>
+						{{e.age}}
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
