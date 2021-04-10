@@ -17,29 +17,28 @@ export class EmployeeComponent  {
   showStatus:boolean=false;
   btnText:string="Click Here";
   btnStyle:string="btn btn-outline-primary";
-  cardTitle:string="Employee";
+  cardTitle:string="Jaathiratnalu";
   cardDisp:string="";
   
 
  
-  empid!:number;
-  empName:string="";
-  empAge!:number;
+  jid!:number;
+  jName:string="";
+  jAge!:number;
   flag!:boolean;
   success!:boolean;
 
  
 
 
-  employees=[
-    {"empid":1001,"name":"Kishore","age":25},
-    {"empid":1002,"name":"Sai Kishore","age":3},
-    {"empid":1003,"name":"Reddy Sai Kishore","age":15},
-    {"empid":1004,"name":"Pusapati Reddy Sai Kishore","age":10}
+  jaathiratnaalu=[
+    {"jid":210,"jName":"Nikhila","jAge":21},
+    {"jid":420,"jName":"Praharshini","jAge":3},
+    {"jid":840,"jName":"Kishore","jAge":15}
   ];
-addEmployee():void{
-  for(let e of this.employees){
-    if(e.empid==this.empid){
+addJaathiratnam():void{
+  for(let e of this.jaathiratnaalu){
+    if(e.jid==this.jid){
       this.flag=true;
       break;
     }
@@ -48,11 +47,11 @@ addEmployee():void{
     }
   }
   if(!this.flag){
-    this.employees.push(
+    this.jaathiratnaalu.push(
       {
-        "empid": this.empid,
-        "name":this.empName,
-        "age":this.empAge,
+        "jid": this.jid,
+        "jName":this.jName,
+        "jAge":this.jAge,
       }
       );
       this.success=true;
@@ -66,10 +65,11 @@ addEmployee():void{
   onClick(){
     this.btnStyle="btn btn-outline-danger";
     this.btnText="Clicked";
-    this.cardDisp=`An employer is a person or institution that hires employees. Employers offer wages or a salary to the workers in exchange for the worker's work or labor. One speaks of wages if the employee is paid by the hour and of salary if he is paid a set rate per pay period.`;
+    this.cardDisp=`Jathi Rathnalu is a mixed bag, but then again, life ​zindagi aipoindi, ​so go watch it for the comedy and the performances.`;
   }
   clickMe(){
     this.showStatus=!this.showStatus;
   }
+  
 
 }

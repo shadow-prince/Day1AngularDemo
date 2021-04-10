@@ -1,4 +1,5 @@
 <div class="card" style="width: 18rem;">
+	<img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaCnVHjSwthvb_WyPtJTNCjS8GXGePaTkcZl8z1Zy4xZWSFMfp" alt="Card image cap">
 	<div class="card-body">
 		<h5 class="card-title">{{cardTitle}}</h5>
 		<p class="card-text">{{cardDisp}}</p>
@@ -46,6 +47,7 @@
 	<button (click)="clickMe()" class="btn btn-primary">{{showStatus?'Hide':'Show'}}</button>
 
 </div>
+ 
 
 <br>
 
@@ -58,16 +60,16 @@
 
 <div class="container">
 
-	<input type="text" class="form-control" placeholder="Enter Employee Id " [(ngModel)]='empid'>
+	<input type="text" class="form-control" placeholder="Enter Jaathiratnam ID" [(ngModel)]='jid'>
 	<div *ngIf='flag'  class="alert alert-danger" role="alert">
-		Employee id {{empid}} already exits!
+		Jaathiratnam with id {{jid}} already exits!
 	  </div>
-	<input type="text" class="form-control" placeholder="Enter  Name" [(ngModel)]='empName'>
-	<input type="text" class="form-control" placeholder="Enter Age " [(ngModel)]='empAge'>
-<button (click)="addEmployee()" class="btn btn-primary">Add Employee</button>
+	<input type="text" class="form-control" placeholder="Enter  Name" [(ngModel)]='jName'>
+	<input type="text" class="form-control" placeholder="Enter Age " [(ngModel)]='jAge'>
+<button (click)="addJaathiratnam()" class="btn btn-primary">Add Jaathiratnam</button>
 </div>
 <div *ngIf='success'  class="alert alert-success" role="alert">
-	Employee Added
+	Jaathiratnam Added
 </div>
 <div class="container">
  
@@ -76,7 +78,7 @@
 			<thead>
 				<tr>
 					<th>
-						Employee Id
+						Jaathiratnam Id
 					</th>
 					<th>
 						Name
@@ -87,18 +89,91 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr *ngFor="let e of employees">
+				<tr *ngFor="let j of jaathiratnaalu">
 					<td>
-						{{e.empid}}
+						{{j.jid}}
 					</td>
 					<td>
-						{{e.name}}
+						{{j.jName}}
 					</td>
 					<td>
-						{{e.age}}
+						{{j.jAge}}
 					</td>
 				</tr>
 			</tbody>
 		</table>
 	</div>
+</div>
+<div class="container">
+	<h5 class="text-center">Lyricss..</h5>
+	<pre class="text-center">
+		Chitti nee navvante
+		Lakshmi pataas ye
+		Fattumani pelindha
+		Naa gunde khalass ye
+		Atta nuvvu girra girra
+		Melikal thirige aa oose
+		Nuvvu naku set ayyavani
+		Signal icche breaking news ye
+		
+		Vachesaave line loki vachesaave
+		Chimma cheekatigunna zindagilona
+		Flood light yesaave
+		Hattheri nachhesaave
+		Masthuga nachesaave
+		Black and white local gani
+		Lokam loni rangulu poosave
+		
+		Chitti naa bul bul chitti
+		Chiiti naa chilbul chitti
+		Na rendu buggalu patti
+		Mudhulu pettaave
+		
+		Chitti naa jiljil chitti
+		Chitti naa redbull chitti
+		Naa facebook lo laksha
+		Like lu kottaave
+		
+		Yuddhamemi jaragale
+		Sumolevi assalu yegarale
+		Chitikelo alaa chinna navvutho
+		Paccha janda choopinchanave
+		Madam elizabethu nee range aina
+		Thaadu bongaram leni awara la
+		Nene aina
+		
+		Maassugaadi manasuke vote esaave
+		Bangla nundi basthi ki
+		Flight esaave
+		Teenmar chinnodini
+		DJ steppulu aadisthive
+		Naseebu bad unnodni
+		Nawab chesesethive
+		Athiloka sundari nuvvu
+		Afterall o tappori nenu
+		Google map ayi
+		Nee gundeki cheristhive
+		
+		Arere icchesaave
+		Dil naaku icchesaave
+		Mirchi bajji laanti
+		Life lo nuvvu onion vesaave
+		Arere gucchesaave
+		Love tattoo guchchesaave
+		Masthu masthu biryanilo
+		Nimbu chakkai hulchul chesaave
+		
+		Chitti naa bul bul chitti
+		Chiiti naa chulbul chitti
+		Na rendu buggalu patti
+		Mudhulu pettaave
+		
+		Chitti naa jiljil chitti
+		Chitti naa redbull chitti
+		Naa facebook lo laksha
+		Like lu kottaave
+		
+		
+	</pre>
+
 </div>
