@@ -1,0 +1,11 @@
+div{
+	padding-top: 20ch;
+
+}
+h1{
+	text-align: center;
+}
+h1:hover{
+	transform: scale(1.02);
+	text-shadow: 1px 1px 1px skyblue;
+}
